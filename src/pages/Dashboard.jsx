@@ -1,32 +1,17 @@
 import { useEffect, useState } from "react";
 import useProvider from "../function/Provider";
+import Button from "../components/Button";
 
 export default function Dashboard() {
   const [mood, updateMood] = useState("");
 
-    // const {providerInit} = useProvider();
+//   const {initUser} = useProvider();
 
-    //   useEffect(() => {
-    //   providerInit();
-    // }, [])
+  //   useEffect(() => {
+  //   providerInit();
+  // }, [])
 
-  //   const setMood = async () => {
-  //     // if (mood == "") {
-  //     //   alert("Cannot set");
-  //     // } else if (mood !== "") {
-  //     //   alert("done!");
-  //     //   console.log(mood);
-  //     // }
-
-  //     const setMoodPromise = MoodContract.setMood(mood);
-  //     await setMoodPromise;
-  //   };
-
-  //   async function getMood() {
-  //     const getMoodPromise = MoodContract.getMood();
-  //     const Mood = await getMoodPromise;
-  //     console.log(Mood);
-  //   };
+  
 
   return (
     <div>
@@ -39,8 +24,7 @@ export default function Dashboard() {
         type="text"
         id="mood"
       />
-      {/* <button onClick={setMood}>Set Mood</button>
-          <button onClick={getMood}>Get Mood</button> */}
+    <Button mood={mood}/>
     </div>
   );
 }

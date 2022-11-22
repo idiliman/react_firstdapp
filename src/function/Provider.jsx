@@ -13,14 +13,13 @@ export const useProvider = () => {
 };
 
 const MoodContractAddress = "0x9e399e6AA98b1a2E03d7e0759C123FdbEda13449";
-  const MoodContractABI = ABI;
-  const provider = new ethers.providers.Web3Provider(window.ethereum, "goerli");
-  let MoodContract;
-  let signer;
+const MoodContractABI = ABI;
+const provider = new ethers.providers.Web3Provider(window.ethereum, "goerli");
+let MoodContract;
+let signer;
 
 export default function Provider({children}) {
   
-
   provider.send("eth_requestAccounts", []).then(() => {
     provider.listAccounts().then((accounts) => {
       signer = provider.getSigner(accounts[0]);
@@ -33,7 +32,7 @@ export default function Provider({children}) {
   });
 
   return (
-    <AppContext.Provider value={{}}>
+    <AppContext.Provider value={{MoodContractAddress}}>
       {children}
     </AppContext.Provider>
   );
